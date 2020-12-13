@@ -21,5 +21,5 @@ func InitOMHandler(router *httprouter.Router, orderusecase proto.OrderManager) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("{\"ping\":\"pong\"}"))
 	}))
-	router.POST("/api/angel-broking/om/:product_id", server.HttpHandler(handler.orderProduct))
+	router.POST("/api/v1/order/:product_id", server.HttpHandler(handler.orderProduct))
 }
